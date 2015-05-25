@@ -57,27 +57,36 @@ public class FinalStats extends ActionBarActivity {
 
     public void setValues(){
         for(String key : keys){
-            int value;
+            float value;
+            float percent;
             String keyNumeral;
             if(numerals.containsKey(key)){
                 keyNumeral = numerals.get(key);
                 if(!gameInfo.containsKey(keyNumeral)){
                     value = 0;
+                    percent = 0;
                 }
                 else{
                     value = gameInfo.get(keyNumeral);
+                    percent = (value / (turnCount));
                 }
             }
             else{
                 if(!gameInfo.containsKey(key)){
                     value = 0;
+                    percent = 0;
                 }
                 else{
                     value = gameInfo.get(key);
+                    percent = value / (turnCount);
                 }
             }
-            int resId = getResources().getIdentifier(key + "Count", "id", getPackageName());
-            ((TextView) findViewById(resId)).setText(Integer.toString(value));
+            percent = percent * 100.0f;
+            int countId = getResources().getIdentifier(key + "Count", "id", getPackageName());
+            int percentId = getResources().getIdentifier(key + "Percent", "id", getPackageName());
+            ((TextView) findViewById(countId)).setText(Integer.toString(Math.round(value)));
+            ((TextView) findViewById(percentId)).setText(String.format("%.2f", percent) + "%");
+
         }
     }
 

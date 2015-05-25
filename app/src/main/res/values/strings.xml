@@ -26,5 +26,6 @@
     <string name="rolled">Rolled</string>
     <string name="count">Count</string>
     <string name="percent">Percent</string>
+    <string name="barbarians">BARBARIANS!</string>
 
 </resources>

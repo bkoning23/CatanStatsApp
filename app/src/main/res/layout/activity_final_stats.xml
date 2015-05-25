@@ -7,48 +7,49 @@
     tools:context="com.koningsiefker.statsapp.FinalStats"
     >
 
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/rolled"
+            android:id="@+id/rolledLabel"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/count"
+            android:id="@+id/countLabel"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/percent"
+            android:id="@+id/percentLabel"
+            android:layout_weight="1" />
+    </TableRow>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:layout_marginTop="30dp">
 
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="3">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/rolled"
-                    android:id="@+id/rolledLabel"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/count"
-                    android:id="@+id/countLabel"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/percent"
-                    android:id="@+id/percentLabel"
-                    android:layout_weight="1" />
-            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"

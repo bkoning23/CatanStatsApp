@@ -34,10 +34,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:weightSum="3">
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/two"
                 android:id="@+id/buttonTwo"
@@ -45,10 +46,11 @@
                 android:layout_toRightOf="@+id/turnText"
                 android:textOff="@string/two"
                 android:textOn="@string/two"
-                android:onClick="onClick"/>
+                android:onClick="onClick"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/three"
                 android:id="@+id/buttonThree"
@@ -56,10 +58,11 @@
                 android:layout_centerHorizontal="true"
                 android:onClick="onClick"
                 android:textOff="@string/three"
-                android:textOn="@string/three" />
+                android:textOn="@string/three"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/four"
                 android:id="@+id/buttonFour"
@@ -68,37 +71,41 @@
                 android:layout_toEndOf="@+id/rollText"
                 android:onClick="onClick"
                 android:textOff="@string/four"
-                android:textOn="@string/four" />
+                android:textOn="@string/four"
+                android:layout_weight="1" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:weightSum="3">
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/five"
                 android:id="@+id/buttonFive"
                 android:layout_alignParentRight="true"
                 android:onClick="onClick"
                 android:textOff="@string/five"
-                android:textOn="@string/five" />
+                android:textOn="@string/five"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/six"
                 android:id="@+id/buttonSix"
                 android:layout_below="@+id/buttonFour"
                 android:onClick="onClick"
                 android:textOff="@string/six"
-                android:textOn="@string/six" />
+                android:textOn="@string/six"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/seven"
                 android:id="@+id/buttonSeven"
@@ -106,27 +113,30 @@
                 android:layout_alignParentRight="true"
                 android:onClick="onClick"
                 android:textOff="@string/seven"
-                android:textOn="@string/seven" />
+                android:textOn="@string/seven"
+                android:layout_weight="1" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:weightSum="3">
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/eight"
                 android:id="@+id/buttonEight"
                 android:layout_below="@+id/buttonSix"
                 android:onClick="onClick"
                 android:textOff="@string/eight"
-                android:textOn="@string/eight" />
+                android:textOn="@string/eight"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/nine"
                 android:id="@+id/buttonNine"
@@ -134,25 +144,28 @@
                 android:layout_alignParentRight="true"
                 android:onClick="onClick"
                 android:textOff="@string/nine"
-                android:textOn="@string/nine" />
+                android:textOn="@string/nine"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/ten"
                 android:id="@+id/buttonTen"
                 android:onClick="onClick"
                 android:textOff="@string/ten"
-                android:textOn="@string/ten" />
+                android:textOn="@string/ten"
+                android:layout_weight="1" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:weightSum="3">
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/eleven"
                 android:id="@+id/buttonEleven"
@@ -160,20 +173,22 @@
                 android:layout_alignParentRight="true"
                 android:onClick="onClick"
                 android:textOff="@string/eleven"
-                android:textOn="@string/eleven" />
+                android:textOn="@string/eleven"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/twelve"
                 android:id="@+id/buttonTwelve"
                 android:layout_below="@+id/buttonTen"
                 android:onClick="onClick"
                 android:textOff="@string/twelve"
-                android:textOn="@string/twelve" />
+                android:textOn="@string/twelve"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/yellow"
                 android:id="@+id/buttonYellow"
@@ -182,7 +197,8 @@
                 android:textOn="@string/yellow"
                 android:textOff="@string/yellow"
                 android:onClick="onClick"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:layout_weight="1" />
 
         </TableRow>
 
@@ -190,10 +206,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:weightSum="100">
+            android:weightSum="3">
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/green"
                 android:id="@+id/buttonGreen"
@@ -201,10 +217,11 @@
                 android:textOff="@string/green"
                 android:textOn="@string/green"
                 android:onClick="onClick"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/black"
                 android:id="@+id/buttonBlack"
@@ -213,23 +230,26 @@
                 android:textOff="@string/black"
                 android:textOn="@string/black"
                 android:onClick="onClick"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:layout_weight="1" />
 
             <ToggleButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/blue"
                 android:id="@+id/buttonBlue"
                 android:textOff="@string/blue"
                 android:textOn="@string/blue"
                 android:onClick="onClick"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:layout_weight="1" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:weightSum="5">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -237,17 +257,19 @@
                 android:text="@string/currentRoll"
                 android:id="@+id/rollText"
                 android:textSize="18sp"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                android:layout_weight="2" />
 
             <Button
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:text="@string/save"
                 android:id="@+id/saveButton"
-                android:layout_column="1"
                 android:visibility="invisible"
                 android:nestedScrollingEnabled="false"
-                android:onClick="onSave" />
+                android:onClick="onSave"
+                android:layout_weight="1"
+                android:layout_column="1" />
         </TableRow>
 
         <TableRow
@@ -260,7 +282,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/end_game"
                 android:id="@+id/endButton"
-                android:visibility="visible"
+                android:visibility="invisible"
                 android:onClick="onEnd" />
         </TableRow>
 

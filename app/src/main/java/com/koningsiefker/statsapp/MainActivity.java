@@ -103,6 +103,7 @@ public class MainActivity extends ActionBarActivity {
 
         findViewById(R.id.saveButton).setVisibility(View.INVISIBLE);
         findViewById(R.id.rollText).setVisibility(View.INVISIBLE);
+        findViewById(R.id.endButton).setVisibility(View.VISIBLE);
 
         ((TextView) findViewById(R.id.turnText)).setText("Turn: " + Integer.toString(gameState.getTurn()));
     }

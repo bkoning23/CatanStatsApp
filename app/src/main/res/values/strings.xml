@@ -23,5 +23,8 @@
     <string name="save">Save</string>
     <string name="end_game">End Game</string>
     <string name="title_activity_final_stats">FinalStats</string>
+    <string name="rolled">Rolled</string>
+    <string name="count">Count</string>
+    <string name="percent">Percent</string>
 
 </resources>

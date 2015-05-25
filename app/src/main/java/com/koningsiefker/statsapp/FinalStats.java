@@ -5,14 +5,21 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
+import java.util.regex.Pattern;
 
 
 public class FinalStats extends ActionBarActivity {
 
     HashMap<String, Integer> gameInfo;
     int turnCount;
+    private List<String> keys = Arrays.asList("two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "blue", "black", "green", "yellow");
+    private HashMap<String, String> numerals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +28,8 @@ public class FinalStats extends ActionBarActivity {
         Intent i = getIntent();
         gameInfo = (HashMap<String, Integer>) i.getSerializableExtra("data");
         turnCount = i.getIntExtra("turnCount", -1);
+        fillNumerals();
+        setValues();
 
     }
 
@@ -44,5 +53,46 @@ public class FinalStats extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setValues(){
+        for(String key : keys){
+            int value;
+            String keyNumeral;
+            if(numerals.containsKey(key)){
+                keyNumeral = numerals.get(key);
+                if(!gameInfo.containsKey(keyNumeral)){
+                    value = 0;
+                }
+                else{
+                    value = gameInfo.get(keyNumeral);
+                }
+            }
+            else{
+                if(!gameInfo.containsKey(key)){
+                    value = 0;
+                }
+                else{
+                    value = gameInfo.get(key);
+                }
+            }
+            int resId = getResources().getIdentifier(key + "Count", "id", getPackageName());
+            ((TextView) findViewById(resId)).setText(Integer.toString(value));
+        }
+    }
+
+    private void fillNumerals(){
+        numerals = new HashMap<>();
+        numerals.put("two", "2");
+        numerals.put("three", "3");
+        numerals.put("four", "4");
+        numerals.put("five", "5");
+        numerals.put("six", "5");
+        numerals.put("seven", "7");
+        numerals.put("eight", "8");
+        numerals.put("nine", "9");
+        numerals.put("ten", "10");
+        numerals.put("eleven", "11");
+        numerals.put("twelve", "12");
     }
 }

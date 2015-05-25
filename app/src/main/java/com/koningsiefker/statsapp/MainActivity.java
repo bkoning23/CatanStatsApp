@@ -27,6 +27,7 @@ public class MainActivity extends ActionBarActivity {
     ArrayList<Integer> colorButtons;
 
     //TODO: Use these to detemine the last buttons pressed, quicker than going in a list
+    //TODO: Add undo button for last action
     int lastNumberId = -1;
     int lastColorId = -1;
 

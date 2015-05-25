@@ -96,7 +96,7 @@ public class FinalStats extends ActionBarActivity {
         numerals.put("three", "3");
         numerals.put("four", "4");
         numerals.put("five", "5");
-        numerals.put("six", "5");
+        numerals.put("six", "6");
         numerals.put("seven", "7");
         numerals.put("eight", "8");
         numerals.put("nine", "9");

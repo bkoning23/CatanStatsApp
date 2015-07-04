@@ -28,5 +28,6 @@
     <string name="percent">Percent</string>
     <string name="barbarians">BARBARIANS!</string>
     <string name="undo">Undo</string>
+    <string name="noTurns">No Previous Turns</string>
 
 </resources>

@@ -32,12 +32,13 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Text"
+                android:text="@string/noTurns"
                 android:id="@+id/lastTurnText" />
         </TableRow>
 
@@ -286,7 +287,8 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:weightSum="5">
 
             <Button
                 android:layout_width="wrap_content"
@@ -294,14 +296,17 @@
                 android:text="@string/end_game"
                 android:id="@+id/endButton"
                 android:visibility="invisible"
-                android:onClick="onEnd" />
+                android:onClick="onEnd"
+                android:layout_weight="1" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/undo"
                 android:id="@+id/undoButton"
-                android:onClick="onClickUndo" />
+                android:onClick="onClickUndo"
+                android:layout_weight="1"
+                android:visibility="invisible" />
         </TableRow>
 
     </TableLayout>

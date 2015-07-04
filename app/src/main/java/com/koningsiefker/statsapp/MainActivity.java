@@ -136,6 +136,8 @@ public class MainActivity extends ActionBarActivity {
         updateTurnCount();
         setPreviousTurnField(color, number);
 
+        findViewById(R.id.undoButton).setVisibility(View.VISIBLE);
+
         turnStack.push(new Pair(color, number));
     }
 
@@ -176,7 +178,8 @@ public class MainActivity extends ActionBarActivity {
             gameState.decrement(number, color);
         }
         catch(EmptyStackException e){
-            setPreviousTurnField("0", "0");
+            setPreviousTurnField("No Previous Turns", "");
+            findViewById(R.id.undoButton).setVisibility(View.INVISIBLE);
             gameState = new GameState();
         }
 

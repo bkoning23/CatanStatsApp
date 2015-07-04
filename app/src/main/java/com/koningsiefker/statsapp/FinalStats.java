@@ -86,7 +86,6 @@ public class FinalStats extends ActionBarActivity {
             int percentId = getResources().getIdentifier(key + "Percent", "id", getPackageName());
             ((TextView) findViewById(countId)).setText(Integer.toString(Math.round(value)));
             ((TextView) findViewById(percentId)).setText(String.format("%.2f", percent) + "%");
-
         }
     }
 

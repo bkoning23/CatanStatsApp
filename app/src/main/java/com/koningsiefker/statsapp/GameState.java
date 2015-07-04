@@ -47,6 +47,18 @@ public class GameState implements Serializable{
         turn++;
     }
 
+    public void decrement(String number, String color){
+        int numberCount = gameInfo.get(number) - 1;
+        gameInfo.remove(number);
+        gameInfo.put(number, numberCount);
+
+        int colorCount = gameInfo.get(color) - 1;
+        gameInfo.remove(color);
+        gameInfo.put(color, colorCount);
+
+        turn--;
+    }
+
     public int getTurn(){
         return turn;
     }
@@ -54,5 +66,6 @@ public class GameState implements Serializable{
     public HashMap getGameInfo(){
         return gameInfo;
     }
+
 
 }

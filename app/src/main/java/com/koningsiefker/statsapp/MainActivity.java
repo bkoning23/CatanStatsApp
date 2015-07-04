@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +17,9 @@ import android.widget.ToggleButton;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.List;
+import java.util.Stack;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -31,6 +34,7 @@ public class MainActivity extends ActionBarActivity {
     int lastNumberId = -1;
     int lastColorId = -1;
 
+    Stack turnStack = new Stack();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,11 +94,34 @@ public class MainActivity extends ActionBarActivity {
             findViewById(R.id.saveButton).setVisibility(View.VISIBLE);
             findViewById(R.id.rollText).setVisibility(View.VISIBLE);
         }
+    }
 
+    public void onClickUndo(View v){
+        if(v.getId() == R.id.undoButton){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure you want to undo?");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    undo();
+                }
+            })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+            builder.show();
+        }
     }
 
     public void onSave(View v){
-        gameState.increment(((ToggleButton)findViewById(lastNumberId)).getTextOff().toString(), ((ToggleButton)findViewById(lastColorId)).getTextOff().toString().toLowerCase());
+
+        String color = ((ToggleButton)findViewById(lastColorId)).getTextOff().toString().toLowerCase();
+        String number = ((ToggleButton)findViewById(lastNumberId)).getTextOff().toString();
+
+        gameState.increment(number, color);
 
         //Toggled buttons are cleared and the stored info on the last button pushed is reset.
         ((ToggleButton) findViewById(lastNumberId)).setChecked(false);
@@ -106,7 +133,10 @@ public class MainActivity extends ActionBarActivity {
         findViewById(R.id.rollText).setVisibility(View.INVISIBLE);
         findViewById(R.id.endButton).setVisibility(View.VISIBLE);
 
-        ((TextView) findViewById(R.id.turnText)).setText("Turn: " + Integer.toString(gameState.getTurn()));
+        updateTurnCount();
+        setPreviousTurnField(color, number);
+
+        turnStack.push(new Pair(color, number));
     }
 
     public void onEnd(View v){
@@ -121,7 +151,6 @@ public class MainActivity extends ActionBarActivity {
         .setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
             }
         });
         builder.show();
@@ -133,6 +162,30 @@ public class MainActivity extends ActionBarActivity {
         i.putExtra("turnCount", gameState.getTurn());
         i.putExtra("data", gameState.getGameInfo());
         startActivity(i);
+    }
+
+    private void undo(){
+
+        turnStack.pop();
+
+        try{
+            Pair temp = (Pair) turnStack.peek();
+            String color = (String) temp.first;
+            String number = (String) temp.second;
+            setPreviousTurnField(color, number);
+            gameState.decrement(number, color);
+        }
+        catch(EmptyStackException e){
+            setPreviousTurnField("0", "0");
+            gameState = new GameState();
+        }
+
+
+        updateTurnCount();
+
+
+
+
     }
 
     //Creates a list of all the buttons so they can be toggled
@@ -170,6 +223,14 @@ public class MainActivity extends ActionBarActivity {
         String color = ((ToggleButton) findViewById(lastColorId)).getTextOff().toString();
 
         v.setText(number + " " + color);
+    }
+
+    private void setPreviousTurnField(String color, String number){
+        ((TextView) findViewById(R.id.lastTurnText)).setText("Last Turn: " + color + " " + number);
+    }
+
+    private void updateTurnCount(){
+        ((TextView) findViewById(R.id.turnText)).setText("Turn: " + Integer.toString(gameState.getTurn()));
     }
 
 

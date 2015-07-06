@@ -19,10 +19,15 @@ public class GameState implements Serializable{
     private int turn;
     private HashMap<String, Integer> gameInfo;
 
+    private int pirateCounter;
+
+    private final String BLACK = "black";
+
     public GameState(){
         counters = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,0,0,0,0,0));
         gameInfo = new HashMap<>();
         turn = 0;
+        pirateCounter = 0;
     }
 
 
@@ -44,6 +49,12 @@ public class GameState implements Serializable{
             gameInfo.remove(color);
             gameInfo.put(color, colorCount);
         }
+        if(color.equals(BLACK)){
+            pirateCounter++;
+        }
+        if(pirateCounter == 7){
+            pirateCounter = 0;
+        }
         turn++;
     }
 
@@ -55,7 +66,15 @@ public class GameState implements Serializable{
         int colorCount = gameInfo.get(color) - 1;
         gameInfo.remove(color);
         gameInfo.put(color, colorCount);
+        if(color.equals(BLACK)){
+            if(pirateCounter==0){
+                pirateCounter = 6;
+            }
+            else{
+                pirateCounter--;
+            }
 
+        }
         turn--;
     }
 
@@ -67,5 +86,8 @@ public class GameState implements Serializable{
         return gameInfo;
     }
 
+    public int getPirateCounter(){
+        return pirateCounter;
+    }
 
 }

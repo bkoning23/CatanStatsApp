@@ -139,6 +139,9 @@ public class MainActivity extends ActionBarActivity {
         findViewById(R.id.undoButton).setVisibility(View.VISIBLE);
 
         turnStack.push(new Pair(color, number));
+
+        updatePirateText();
+
     }
 
     public void onEnd(View v){
@@ -186,8 +189,7 @@ public class MainActivity extends ActionBarActivity {
 
         updateTurnCount();
 
-
-
+        updatePirateText();
 
     }
 
@@ -236,6 +238,13 @@ public class MainActivity extends ActionBarActivity {
         ((TextView) findViewById(R.id.turnText)).setText("Turn: " + Integer.toString(gameState.getTurn()));
     }
 
-
+    private void updatePirateText(){
+        if(gameState.getPirateCounter() == 6){
+            findViewById(R.id.pirateAttackText).setVisibility(View.VISIBLE);
+        }
+        else{
+            findViewById(R.id.pirateAttackText).setVisibility(View.INVISIBLE);
+        }
+    }
 
 }

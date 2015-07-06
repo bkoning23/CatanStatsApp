@@ -65,6 +65,10 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        else if(id == R.id.newGame){
+            newGame();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -245,6 +249,16 @@ public class MainActivity extends ActionBarActivity {
         else{
             findViewById(R.id.pirateAttackText).setVisibility(View.INVISIBLE);
         }
+    }
+
+    private void newGame() {
+        gameState = new GameState();
+        buttonLists();
+        updateTurnCount();
+        updatePirateText();
+        findViewById(R.id.saveButton).setVisibility(View.INVISIBLE);
+        findViewById(R.id.rollText).setVisibility(View.INVISIBLE);
+        setPreviousTurnField("No Previous Turns", "");
     }
 
 }

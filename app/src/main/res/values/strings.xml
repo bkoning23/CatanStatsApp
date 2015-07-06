@@ -30,5 +30,6 @@
     <string name="undo">Undo</string>
     <string name="noTurns">No Previous Turns</string>
     <string name="pirateAttack">Pirates attack next black roll!</string>
+    <string name="newGame">New Game</string>
 
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Stats App</string>
+    <string name="app_name">Catan Stat Tracker</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -31,5 +31,8 @@
     <string name="noTurns">No Previous Turns</string>
     <string name="pirateAttack">Pirates attack next black roll!</string>
     <string name="newGame">New Game</string>
+    <string name="checkStats">Check Stats</string>
+    <string name="title_activity_select">SelectActivity</string>
+    <string name="savedGames">Saved Games</string>
 
 </resources>

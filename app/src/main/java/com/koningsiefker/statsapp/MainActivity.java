@@ -30,7 +30,6 @@ public class MainActivity extends ActionBarActivity {
     ArrayList<Integer> colorButtons;
 
     //TODO: Use these to detemine the last buttons pressed, quicker than going in a list
-    //TODO: Add undo button for last action
     int lastNumberId = -1;
     int lastColorId = -1;
 
@@ -165,9 +164,20 @@ public class MainActivity extends ActionBarActivity {
         builder.show();
     }
 
+    public void onCheck(View v){
+        checkStats();
+    }
+
     private void endGame(){
         Intent i = new Intent(this, FinalStats.class);
+        i.putExtra("turnCount", gameState.getTurn());
+        i.putExtra("data", gameState.getGameInfo());
+        gameState = new GameState();
+        startActivity(i);
+    }
 
+    private void checkStats(){
+        Intent i = new Intent(this, FinalStats.class);
         i.putExtra("turnCount", gameState.getTurn());
         i.putExtra("data", gameState.getGameInfo());
         startActivity(i);

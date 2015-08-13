@@ -10,8 +10,8 @@
         android:layout_height="match_parent">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="50dp">
 
@@ -240,7 +240,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/green"
                 android:id="@+id/buttonGreen"
-                android:layout_below="@+id/buttonTwelve"
                 android:textOff="@string/green"
                 android:textOn="@string/green"
                 android:onClick="onClick"
@@ -252,8 +251,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/black"
                 android:id="@+id/buttonBlack"
-                android:layout_below="@+id/buttonEleven"
-                android:layout_alignParentRight="true"
                 android:textOff="@string/black"
                 android:textOn="@string/black"
                 android:onClick="onClick"
@@ -303,25 +300,41 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:weightSum="5">
+            android:weightSum="3" >
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/end_game"
                 android:id="@+id/endButton"
-                android:visibility="invisible"
+                android:textOff="@string/blue"
+                android:textOn="@string/blue"
                 android:onClick="onEnd"
+                android:textSize="12sp"
                 android:layout_weight="1" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/undo"
                 android:id="@+id/undoButton"
+                android:textOff="@string/green"
+                android:textOn="@string/green"
                 android:onClick="onClickUndo"
-                android:layout_weight="1"
-                android:visibility="invisible" />
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/checkStats"
+                android:id="@+id/checkStatButton"
+                android:textOff="@string/black"
+                android:textOn="@string/black"
+                android:onClick="onCheck"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
         </TableRow>
 
     </TableLayout>
